@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A01028425 - FinalProject</title>
+<link rel="stylesheet" href="styles/styles.css">
+<script src="scripts/script.js" defer="defer"></script>
+</head>
+<body>
+    <header>Game</header>
+    
+    <div id="popup_bg"></div>
+        <main>
+            
+                
+            
+            <img id="hangman_images1" src="images/image-1.png" style="display:none;" alt="hangman_img1"/>
+            <img id="hangman_images2" src="images/image-2.png" style="display:none;" alt="hangman_img2"/>
+            <img id="hangman_images3" src="images/image-3.png" style="display:none;" alt="hangman_img3"/>
+            <img id="hangman_images4" src="images/image-4.png" style="display:none;" alt="hangman_img4"/>
+            <img id="hangman_images5" src="images/image-5.png" style="display:none;" alt="hangman_img5"/>
+            <img id="hangman_images6" src="images/image-6.png" style="display:none;" alt="hangman_img6"/>
+            <img id="hangman_images7" src="images/image-7.png" style="display:none;" alt="hangman_img7"/>
+            <div class="game_container" id="game_container">
+                <div id="correct"></div>
+                <div id="incorrect"></div>
+                <div class="hangman_container" id="hangman_container">
+                    
+                    <canvas id="hangman_canvas"></canvas>
+                    <div id="word"></div>
+                </div>
+                
+                <div class="guesses_container">
+
+                    <div id="guesses_left">guesses go here</div>
+                    <div id="hint"></div>
+                    <div id="letters_guessed"> Letters Guessed:
+                        <p id="letters_para"></p>
+                    </div>
+
+                </div>
+
+                <div class="letters_container" id="letters_container">
+                    Letters go here
+                </div>
+
+            </div>
+            
+        </main>
+    
+
+    <div id="init_popup">
+        <h2>Start Round of Hangman?</h2>
+        <p>
+            Rules:<br>
+            -Guess the word within six guesses, If you do you win!<br>
+            -Otherwise you lose!<br>
+            
+        </p>
+        <button type="button" id="start">Start</button>
+    </div>
+    <div id="win">
+        <h2>You Won!</h2>
+        <h2 id="win_heading">You Won!</h2>
+        <p>
+            Congrats on winning this daunting game of hangman!<br>
+            To play again, hit the restart button in the bottom left corner.
+
+        </p>
+        <button type="button" id="play_again">Play Again</button>
+    </div>
+
+    <div id="lose">
+        <h2>Play Again?</h2>
+        <h2 id="lose_heading"></h2>
+        <p>
+            To play again press the "Play Again" button in the bottom left corner
+        </p>
+        <button type="button" id="try_again">Play Again</button>
+    </div>
+    
+</body>
+</html>

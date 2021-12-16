@@ -1,0 +1,246 @@
+/*scss variables*/
+/*-------------------------------------------------------------------------------*/
+/*mixins*/
+/*--------------------------------------------------------------------------------*/
+body {
+  overflow: hidden;
+  background-color: #706e5c;
+  font: monospace;
+}
+
+header {
+  background-image: url(../images/header_background2.jpg);
+  border: 1px solid white;
+  color: white;
+  padding: 30px;
+  font-size: 32px;
+}
+
+main {
+  background-color: #659dbd;
+  display: flex;
+  width: 70;
+  height: 100vh;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px;
+  border: solid 4px black;
+  z-index: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+#word {
+  position: relative;
+  font-size: 64px;
+  border: dashed 1px skyblue;
+  margin: 0 auto;
+  padding: 10px;
+  letter-spacing: 10px;
+  width: 70%;
+}
+
+/*containers*/
+.game_container {
+  display: grid;
+  grid-template-rows: 65% 10% 100px;
+  grid-template-areas: "hangman" "guesses" "letters";
+  position: relative;
+  background-color: #daad86;
+  width: 80%;
+  height: 800px;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.hangman_container {
+  grid: "hangman";
+  display: absolute;
+  background-color: white;
+  /*need to fix alignment of players within box*/
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 3;
+}
+
+.guesses_container {
+  grid: "guesses";
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  grid-template-rows: 0px;
+  grid-gap: 5%;
+  grid-template-areas: "numOfGuesses hint lettersGuessed";
+  position: relative;
+  padding-top: 1%;
+  font-size: 32px;
+  margin-bottom: 0;
+}
+
+.guesses_container > div:first-child {
+  grid: "numOfGuesses";
+}
+
+.guesses_container > #hint {
+  grid: "hint";
+}
+
+.guesses_container > div:nth-child(3) {
+  grid: "lettersGuessed";
+}
+
+.guesses_container > div {
+  background-color: #fbeec1;
+  border: 2px solid black;
+  box-shadow: 5px 5px;
+  border-radius: 20px;
+  padding: 1%;
+  text-align: center;
+  width: 300px;
+  height: 150px;
+}
+
+.guesses_container > #hint {
+  background-color: #fbeec1;
+  border: 2px solid black;
+  box-shadow: 5px 5px;
+  border-radius: 20px;
+  padding: 1%;
+  text-align: center;
+  width: 400px;
+  height: 150px;
+}
+
+.letters_container {
+  grid: "letters";
+  /*need to fix alignment of players within box*/
+  width: 700px;
+  height: 100px;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: absolute;
+  left: 15%;
+  bottom: 5px;
+}
+
+#O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z {
+  position: relative;
+  left: 50px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*game elements*/
+.letterBtn {
+  width: 50px;
+  height: 50px;
+  background-color: #fbeec1;
+  color: black;
+  font-size: 32px;
+}
+
+/*miscellaneous*/
+#hangman_canvas {
+  width: 600px;
+  height: 400px;
+}
+
+/*popups*/
+#init_popup {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  width: 600px;
+  height: 300px;
+  background-color: burlywood;
+  border-radius: 20px;
+  text-align: center;
+  border: solid 1px black;
+}
+
+#popup_bg {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: darkslategrey;
+  opacity: 0.5;
+  z-index: 9999;
+}
+
+#win {
+  z-index: 2;
+  display: none;
+  width: 600px;
+  height: 300px;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  font-size: 20px;
+  background-color: lightgreen;
+  border: solid 3px darkgreen;
+  z-index: 10000;
+  padding: 10px;
+}
+
+#lose {
+  z-index: 2;
+  display: none;
+  width: 600px;
+  height: 300px;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  font-size: 20px;
+  background-color: #FF6347;
+  border: solid 3px darkred;
+  z-index: 10000;
+  padding: 10px;
+}
+
+/* animation divs*/
+#correct {
+  width: 225px;
+  height: 100px;
+  position: absolute;
+  font-size: 16px;
+  background-color: lightgreen;
+  border: solid 2px darkgreen;
+  top: 10px;
+  left: 250px;
+  z-index: 1;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#incorrect {
+  width: 225px;
+  height: 100px;
+  position: absolute;
+  font-size: 16px;
+  background-color: #FF6347;
+  border: solid 2px darkred;
+  left: 250px;
+  top: 10px;
+  z-index: 1;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#win > button {
+  position: absolute;
+  bottom: 1px;
+}
+
+#lose > button {
+  position: absolute;
+  bottom: 1px;
+}/*# sourceMappingURL=styles.css.map */
